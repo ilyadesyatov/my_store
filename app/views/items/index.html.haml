@@ -1,0 +1,23 @@
+%h1 all items
+%table
+  %thead
+    %th ID
+    %th цена:
+    %th имя:
+    %th описание:
+    %th вес:
+    %th Рейтинг
+    %th
+  - @items.each do |f|
+    %tbody
+      %td= f.id
+      %td= f.price
+      %td= link_to f.name, item_path(f)
+      %td= f.description
+      %td= f.weight
+      %td
+        = f.votes_count
+        , #{link_to "+", upvote_item_path(f)}
+      %td= link_to "удалить", f, method: :delete, data: { confirm: "точно удалить?"}
+%p= t :hello
+%p= flash[:notice]

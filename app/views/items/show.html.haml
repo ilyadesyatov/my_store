@@ -1,0 +1,9 @@
+%h1= @item.name
+%ul
+  %li
+    Цена: #{@item.price} руб.
+  %li
+    Вес: #{@item.weight} кг.
+  %li
+    Описание: #{urls_to_images(@item.description)}
+  %li= image_tag(@item.image)

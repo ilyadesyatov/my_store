@@ -1,0 +1,21 @@
+%h1 Edit new item
+= form_for @item, :html => {:multipart => true}  do |f|
+  %table
+    %thead
+      %th цена:
+      %th имя:
+      %th описание:
+      %th вес:
+      %th Image
+    %tbody
+      %td= f.text_field :price
+      %td= f.text_field :name
+      %td= f.text_field :description
+      %td= f.text_field :weight
+      %td
+        = image_tag(@item.image.url) if @item.image?
+        = f.file_field :image
+        = f.hidden_field :image_cache
+      = hidden_field_tag :admin, 1
+  %div= f.submit "save item"
+#test test jQuery

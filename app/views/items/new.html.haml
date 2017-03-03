@@ -1,0 +1,21 @@
+%h1 Create new item
+= simple_form_for @item, :html => {:multipart => true} do |f|
+  %table
+    %thead
+      %th цена:
+      %th имя:
+      %th описание:
+      %th вес:
+      %th Image:
+    %tbody
+      %td= f.text_field :price, label: 'No special characters.'
+      %td= f.text_field :name, label: 'Your name please', error: 'name is mandatory, please specify one'
+      %td= f.text_field :description, placeholder: 'Описание'
+      %td= f.text_field :weight
+      %td
+        = image_tag(@item.image) if @item.image?
+        = f.file_field :image
+        = f.hidden_field :image_cache
+      =hidden_field_tag :admin, 1
+  = f.submit "Make item"
+#test.btn.btn-success add item
