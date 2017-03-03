@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
-    before_filter :find_item, only: [:show, :edit, :update, :destroy, :upvote]
-    before_filter :check_if_admin, only: [:edit, :update, :new, :create]
+    before_action :find_item, only: [:show, :edit, :update, :destroy, :upvote]
+    before_action :check_if_admin, only: [:edit, :update, :new, :create]
 
 
     def index
@@ -12,6 +12,17 @@ class ItemsController < ApplicationController
     def expensive
       @items = Item.where("price > 1000")
       render "index"
+    end
+
+    def last
+      @item = Item.last
+      puts @item.inspect
+=begin
+      respond_to do |format|
+        format.json {render json: { item_name:  @item.name}}
+      end
+=end
+      render "last"
     end
 
     def show

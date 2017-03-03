@@ -36,6 +36,18 @@ $(document).ready(function(){
             })
         });
     });
+
+    $('#selectLastItem').on('click', function(){
+        $.ajax({
+            type: "GET",
+            dataType: 'script',
+            url: "/items/last",
+            success: (function(data) {
+                console.log(data);
+            })
+        });
+
+    });
 });
 
 

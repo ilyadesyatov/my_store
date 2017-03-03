@@ -18,7 +18,7 @@
 @import "bootstrap";
 
 input[type=submit] {@extend .btn; @extend .btn-warning;}
-#test {@extend .btn;  margin-top: 30px;}
+#test, #selectLastItem {@extend .btn;  margin-top: 30px;}
 
 h1 {
   color: orange;

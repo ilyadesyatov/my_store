@@ -20703,3 +20703,1157 @@ Completed 200 OK in 89ms (Views: 85.5ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Product 4"], ["description", "A product."], ["created_at", 2017-03-02 12:30:29 UTC], ["updated_at", 2017-03-02 12:30:29 UTC]]
   [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/items" for 127.0.0.1 at 2017-03-03 14:52:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.haml within layouts/application (31.1ms)
+Completed 200 OK in 429ms (Views: 386.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items/17/edit" for 127.0.0.1 at 2017-03-03 14:52:57 +0300
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering public/403.html within layouts/application
+  Rendered public/403.html within layouts/application (0.4ms)
+Filter chain halted as :check_if_admin rendered or redirected
+Completed 403 Forbidden in 78ms (Views: 70.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items/17/edit?admin=1" for 127.0.0.1 at 2017-03-03 14:53:03 +0300
+Processing by ItemsController#edit as HTML
+  Parameters: {"admin"=>"1", "id"=>"17"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering items/edit.html.haml within layouts/application
+  Rendered items/edit.html.haml within layouts/application (18.6ms)
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2017-03-03 14:53:12 +0300
+Processing by ItemsController#new as HTML
+  Rendering public/403.html within layouts/application
+  Rendered public/403.html within layouts/application (0.5ms)
+Filter chain halted as :check_if_admin rendered or redirected
+Completed 403 Forbidden in 135ms (Views: 133.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:53:14 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (60.9ms)
+Completed 200 OK in 99ms (Views: 96.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:57:27 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (43.0ms)
+Completed 200 OK in 320ms (Views: 221.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:57:35 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within a self-closing tag is illegal.):
+    21: 
+    22: #test.btn.btn-success add item
+    23: %br/
+    24:   #selectLastItem.btn.btn-success Select Last Item
+  
+app/views/items/new.html.haml:24
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.0ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:57:41 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %br and nested within it.):
+    21: 
+    22: #test.btn.btn-success add item
+    23: %br\
+    24:   #selectLastItem.btn.btn-success Select Last Item
+  
+app/views/items/new.html.haml:24
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.2ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:57:47 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 76ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:58:32 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:58:44 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 55ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 14:59:41 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 120ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:00:22 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 2313ms (Views: 2308.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:01:29 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (41.2ms)
+Completed 200 OK in 604ms (Views: 576.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/expensive" for 127.0.0.1 at 2017-03-03 15:12:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#expensive as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (price > 1000)[0m
+  Rendered items/index.html.haml within layouts/application (26.1ms)
+Completed 200 OK in 2598ms (Views: 2554.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:15:51 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (98.9ms)
+Completed 200 OK in 303ms (Views: 261.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/items/last" for 127.0.0.1 at 2017-03-03 15:15:53 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/items/last"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (24.5ms)
+Started POST "/items/last" for 127.0.0.1 at 2017-03-03 15:16:03 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/items/last"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.3@anaphora/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (21.9ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:16:04 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 179ms (Views: 176.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488543364448" for 127.0.0.1 at 2017-03-03 15:16:05 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488543364448"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 83ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:16:26 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (12.8ms)
+Completed 200 OK in 92ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488543386780" for 127.0.0.1 at 2017-03-03 15:16:27 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488543386780"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 94ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:16:46 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 69ms (Views: 44.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/items/last?_=1488543407017" for 127.0.0.1 at 2017-03-03 15:16:47 +0300
+Processing by ItemsController#show as JS
+  Parameters: {"_"=>"1488543407017", "id"=>"last"}
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.3ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 62ms (Views: 56.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:17:00 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (82.2ms)
+Completed 200 OK in 593ms (Views: 545.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items/last?_=1488543421911" for 127.0.0.1 at 2017-03-03 15:17:02 +0300
+Processing by ItemsController#show as JS
+  Parameters: {"_"=>"1488543421911", "id"=>"last"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 72ms (Views: 63.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/last?_=1488543421912" for 127.0.0.1 at 2017-03-03 15:17:03 +0300
+Processing by ItemsController#show as JS
+  Parameters: {"_"=>"1488543421912", "id"=>"last"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.4ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 65ms (Views: 62.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 15:18:01 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 135ms (Views: 130.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 15:18:03 +0300
+Processing by ItemsController#show as */*
+  Parameters: {"id"=>"last"}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.3ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 68ms (Views: 64.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 15:20:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 123ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 15:49:08 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 131ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 15:49:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 115ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 15:49:22 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 82ms (ActiveRecord: 1.0ms)
+
+
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:06:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 125ms (ActiveRecord: 0.8ms)
+
+
+  [1m[36mItem Load (5.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (price > 1000)[0m
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:09:38 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `newrails' for #<Class:0x007ff0b69fe170>):
+  
+app/controllers/items_controller.rb:28:in `new'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.1ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:10:05 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `newrails' for #<Class:0x007ff0b69fe170>):
+  
+app/controllers/items_controller.rb:28:in `new'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.8ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:10:27 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (77.6ms)
+Completed 200 OK in 730ms (Views: 710.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:10:30 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 105ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:10:44 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (12.1ms)
+Completed 200 OK in 94ms (Views: 56.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:10:45 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:11:32 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:11:34 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 76ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:11:38 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 84ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:13:55 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:14:20 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 111ms (Views: 105.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:14:21 +0300
+Processing by ItemsController#last as JSON
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:16:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (70.9ms)
+Completed 200 OK in 677ms (Views: 625.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/items/last" for 127.0.0.1 at 2017-03-03 16:16:53 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 78ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:20:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (76.3ms)
+Completed 200 OK in 697ms (Views: 644.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:20:26 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+No template found for ItemsController#last, rendering head :no_content
+Completed 204 No Content in 79ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:21:15 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:21:17 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.4ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 101ms (Views: 81.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:21:18 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.3ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 70ms (Views: 67.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:21:25 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (1.1ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 65ms (Views: 63.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:22:23 +0300
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ItemsController> at /Users/admin/RubymineProjects/my_store/app/controllers/items_controller.rb:4)
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.4ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 80ms (Views: 65.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:23:17 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 66ms (Views: 43.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:23:18 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (5.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 67ms (Views: 59.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:23:19 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.4ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 58ms (Views: 56.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:24:38 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 75ms (Views: 71.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:24:38 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.3ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 72ms (Views: 70.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:25:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (66.2ms)
+Completed 200 OK in 487ms (Views: 434.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:25:36 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.4ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 68ms (Views: 59.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:26:31 +0300
+Processing by ItemsController#last as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (1.3ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 201ms (Views: 199.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:26:36 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 45ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:26:39 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.3ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 80ms (Views: 75.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:30:23 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (8.4ms)
+Completed 200 OK in 91ms (Views: 59.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:30:25 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.4ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 68ms (Views: 65.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:30:34 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 87ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:30:35 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" IS NULL ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.3ms)
+Filter chain halted as :find_item rendered or redirected
+Completed 404 Not Found in 67ms (Views: 54.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:33:12 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (8.6ms)
+Completed 200 OK in 84ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:33:14 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.0ms)
+Completed 200 OK in 47ms (Views: 17.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:34:02 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 89ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:34:03 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (3.1ms)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 16:39:33 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (11.5ms)
+Completed 200 OK in 80ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 16:39:35 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.9ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:06:36 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (25.2ms)
+Completed 200 OK in 121ms (Views: 104.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:06:39 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.4ms)
+Completed 200 OK in 27ms (Views: 18.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:08:38 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.8ms)
+Completed 200 OK in 48ms (Views: 17.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:13:22 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 71ms (Views: 68.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:13:26 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.1ms)
+Completed 200 OK in 43ms (Views: 16.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:14:11 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (8.6ms)
+Completed 200 OK in 64ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:14:12 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (0.9ms)
+Completed 200 OK in 49ms (Views: 15.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:15:39 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 75ms (Views: 52.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:15:44 +0300
+Processing by ItemsController#last as HTML
+  [1m[36mItem Load (6.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:16:49 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 128ms (Views: 124.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488550609962" for 127.0.0.1 at 2017-03-03 17:16:50 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488550609962"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488550609963" for 127.0.0.1 at 2017-03-03 17:16:53 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488550609963"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488550609964" for 127.0.0.1 at 2017-03-03 17:27:15 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488550609964"}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 1.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items/last?_=1488550609965" for 127.0.0.1 at 2017-03-03 17:27:18 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488550609965"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488550609966" for 127.0.0.1 at 2017-03-03 17:27:38 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488550609966"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488550609967" for 127.0.0.1 at 2017-03-03 17:27:38 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488550609967"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488550609968" for 127.0.0.1 at 2017-03-03 17:29:04 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488550609968"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:29:41 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (42.6ms)
+Completed 200 OK in 157ms (Views: 114.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items/last?_=1488551382426" for 127.0.0.1 at 2017-03-03 17:29:42 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551382426"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (0.8ms)
+Completed 200 OK in 34ms (Views: 17.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items/last?_=1488551382427" for 127.0.0.1 at 2017-03-03 17:29:43 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551382427"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (0.9ms)
+Completed 200 OK in 31ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488551382428" for 127.0.0.1 at 2017-03-03 17:29:43 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551382428"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (2.3ms)
+Completed 200 OK in 37ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:30:05 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 132ms (Views: 110.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:30:06 +0300
+Processing by ItemsController#last as JSON
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:35:16 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (20.5ms)
+Completed 200 OK in 146ms (Views: 105.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:35:17 +0300
+Processing by ItemsController#last as JSON
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (4.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.0ms)
+
+
+  
+SyntaxError (/Users/admin/RubymineProjects/my_store/app/views/items/last.js.haml:3: syntax error, unexpected '\n', expecting :: or '[' or '.'
+/Users/admin/RubymineProjects/my_store/app/views/items/last.js.haml:6: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/items/last.js.haml:3: syntax error, unexpected '\n', expecting :: or '[' or '.'
+app/views/items/last.js.haml:6: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/items_controller.rb:25:in `last'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (82.5ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:35:58 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last" for 127.0.0.1 at 2017-03-03 17:35:59 +0300
+Processing by ItemsController#last as JSON
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (78.9ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `item' for #<#<Class:0x007fed99213840>:0x007fed9a6963a8>):
+    1: - if (item)
+    2:   %ul
+    3:     %li= item.name
+  
+app/views/items/last.js.haml:1:in `_app_views_items_last_js_haml__1091674889130950651_70329237283900'
+app/controllers/items_controller.rb:25:in `last'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (55.9ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:36:11 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 80ms (Views: 77.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488551771565" for 127.0.0.1 at 2017-03-03 17:36:12 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551771565"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (81.5ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `item' for #<#<Class:0x007fed99213840>:0x007fed9929c028>):
+    1: - if (item)
+    2:   %ul
+    3:     %li= item.name
+  
+app/views/items/last.js.haml:1:in `_app_views_items_last_js_haml__1091674889130950651_70329203118500'
+app/controllers/items_controller.rb:25:in `last'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (49.7ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:36:30 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488551790355" for 127.0.0.1 at 2017-03-03 17:36:31 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551790355"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.4ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488551790356" for 127.0.0.1 at 2017-03-03 17:36:37 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551790356"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.2ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:37:59 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 110ms (Views: 105.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488551880125" for 127.0.0.1 at 2017-03-03 17:38:00 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551880125"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (4.7ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Indenting at the beginning of the document is illegal.):
+    1:   %ul
+    2:     %li= @item.name
+  
+app/views/items/last.js.haml:1
+app/controllers/items_controller.rb:25:in `last'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (54.2ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:38:50 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488551930514" for 127.0.0.1 at 2017-03-03 17:38:50 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551930514"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (0.9ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Indenting at the beginning of the document is illegal.):
+    1:   %ul
+    2:     %p test
+  
+app/views/items/last.js.haml:1
+app/controllers/items_controller.rb:25:in `last'
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendering /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.2.4@my_store/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (57.8ms)
+Started GET "/items/new?admin=1" for 127.0.0.1 at 2017-03-03 17:39:03 +0300
+Processing by ItemsController#new as HTML
+  Parameters: {"admin"=>"1"}
+  Rendering items/new.html.haml within layouts/application
+  Rendered items/new.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/last?_=1488551943818" for 127.0.0.1 at 2017-03-03 17:39:04 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551943818"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.6ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/last?_=1488551943819" for 127.0.0.1 at 2017-03-03 17:39:06 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551943819"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.4ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/last?_=1488551943820" for 127.0.0.1 at 2017-03-03 17:39:08 +0300
+Processing by ItemsController#last as JS
+  Parameters: {"_"=>"1488551943820"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering items/last.js.haml
+  Rendered items/last.js.haml (1.9ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
