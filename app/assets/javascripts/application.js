@@ -30,10 +30,7 @@ $(document).ready(function(){
             data: {
                 item: item,
                 admin: 1
-            },
-            success: (function(data) {
-               // console.log(data);
-            })
+            }
         });
     });
 
@@ -43,7 +40,7 @@ $(document).ready(function(){
             dataType: 'script',
             url: "/items/last",
             success: (function(data) {
-                console.log(data);
+              //  console.log(data);
             })
         });
 

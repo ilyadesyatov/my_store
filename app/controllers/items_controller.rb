@@ -17,11 +17,8 @@ class ItemsController < ApplicationController
     def last
       @item = Item.last
       puts @item.inspect
-=begin
-      respond_to do |format|
-        format.json {render json: { item_name:  @item.name}}
-      end
-=end
+
+      #render json: { item_name:  @item.name}
       render "last"
     end
 
