@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
     def destroy
       @item.destroy
       redirect_to action: "index"
+      ItemsMailer.item_destroyed(@item).deliver
     end
 
     def upvote

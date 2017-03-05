@@ -21857,3 +21857,119 @@ Processing by ItemsController#last as JS
 Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-03-05 17:06:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/chirik/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chirik/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (12.6ms)
+Completed 200 OK in 68ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2017-03-05 17:06:24 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.haml within layouts/application (152.8ms)
+Completed 200 OK in 6048ms (Views: 4886.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2017-03-05 17:24:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (8.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (14.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.haml within layouts/application (82.9ms)
+Completed 200 OK in 13103ms (Views: 12941.2ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2017-03-05 18:12:09 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.haml within layouts/application (26.4ms)
+Completed 200 OK in 344ms (Views: 313.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/items/22" for 127.0.0.1 at 2017-03-05 18:12:13 +0300
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kCT8rRoWzgIRlfzRIyKeDqEjd3Ejy6HG+AE1H2GkIn/2LEiLPy07+1cHcWV4zhwvDygXYKdiF/DIJYCkG7fW4w==", "id"=>"22"}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (85.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 22]]
+  [1m[35m (491.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/items
+  Rendering mailers/items/item_destroyed.text.haml within layouts/mailer
+  Rendered mailers/items/item_destroyed.text.haml within layouts/mailer (1.2ms)
+ItemsMailer#item_destroyed: processed outbound mail in 215.5ms
+Sent mail to ilya@yopmail.com (203.8ms)
+Date: Sun, 05 Mar 2017 18:12:15 +0300
+From: info@mystore.ru
+To: ilya@yopmail.com
+Message-ID: <58bc2acfdf7d_4b841e70b0c89461@ubuntu16041.mail>
+Subject: Item destroyed
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Item =@item.name has just been removed from the store!
+
+
+Completed 302 Found in 1374ms (ActiveRecord: 577.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2017-03-05 18:12:15 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2017-03-05 18:15:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.haml within layouts/application (24.9ms)
+Completed 200 OK in 388ms (Views: 336.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/items/21" for 127.0.0.1 at 2017-03-05 18:15:07 +0300
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3JS+fpluLX2lJaERKydc002vsFQlfiA0qLmdBudiGqq6nApYvFXYhOO3LKVwy97y46TQRaHXlgKYnSi9nXHuNg==", "id"=>"21"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 21]]
+  [1m[35m (890.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/items
+  Rendering mailers/items/item_destroyed.text.haml within layouts/mailer
+  Rendered mailers/items/item_destroyed.text.haml within layouts/mailer (1.2ms)
+ItemsMailer#item_destroyed: processed outbound mail in 260.9ms
+Sent mail to ilya@yopmail.com (243.5ms)
+Date: Sun, 05 Mar 2017 18:15:08 +0300
+From: info@mystore.ru
+To: ilya@yopmail.com
+Message-ID: <58bc2b7cb8657_4c8b1df4bb095880@ubuntu16041.mail>
+Subject: Item destroyed
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Item Product 3 has just been removed from the store!
+
+
+Completed 302 Found in 1612ms (ActiveRecord: 897.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2017-03-05 18:15:09 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.haml within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.haml within layouts/application (13.7ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.8ms)
+
+
